@@ -5,8 +5,7 @@ import { useAllMovies } from "./useAllMovies";
  */
 export const useTopTenMovies = () => {
   const movies = useAllMovies();
-
   // TODO: reorder only best 10 movies by vote, desc (movie with more votes first)
-
-  return movies;
+  movies.sort((a, b) => a.votes - b.votes);
+  return movies.reverse;
 };
