@@ -3,13 +3,16 @@ import { useAllMovies } from "./useAllMovies";
  * Return the 10 most voted movies
  */
 export const useTopTenMovies = () => {
-  const movies = useAllMovies();
+  console.log("FILM NON ORDINATI");
+
+  let movies = useAllMovies();
 
   // Reorder movies by vote in descending order
-  movies.sort((a, b) => b.votes - a.votes);
+  movies = movies.sort((a, b) => b.votes - a.votes);
 
   // Get top 10 movie titles
-  const topTen: string[] = movies.slice(0, 10).map(movie => movie.title);
+  const topTen = movies.slice(0, 10);
 
+  console.log("FILM ORDINATI");
   return topTen;
 };

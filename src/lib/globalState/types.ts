@@ -22,5 +22,5 @@ export interface IGlobalState {
   /**
    * { id: numberOfVotes }
    */
-  votes: Record<string, number>;
+  votes: Map<string, number>;
 }

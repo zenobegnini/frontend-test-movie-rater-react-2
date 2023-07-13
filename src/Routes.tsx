@@ -18,5 +18,6 @@ export const Routes: React.FC = () => {
     case State.dashboard:
     default:
       return <Dashboard />;
+    
   }
 };

@@ -9,9 +9,7 @@ import { TopTen } from "./TopTen";
 export const Dashboard: React.FC = () => {
   const goTo = useGoTo();
   const movies = useAllMovies();
-  const alreadyVoted = Boolean(
-    movies.reduce((total, movie) => total + movie.votes, 0),
-  );
+  const alreadyVoted = movies.some((movie) => movie.votes > 0);
 
   if (!alreadyVoted) {
     return (

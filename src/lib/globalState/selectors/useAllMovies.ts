@@ -1,9 +1,8 @@
-import { List } from "@chakra-ui/react";
 import { Movie } from "../../../api/types";
 import { useGlobalState } from "../GlobalStateContext";
 
-interface IRatedMovie extends Movie {
-  votes: number;
+export interface IRatedMovie extends Movie {
+  votes: number 
 }
 
 export const useAllMovies = (): IRatedMovie[] => {
@@ -13,7 +12,7 @@ export const useAllMovies = (): IRatedMovie[] => {
 
   for (let i = 0; i < state.movies.length; i++) {
     const newMap: IRatedMovie = {
-      votes: state.votes[i],
+      votes: state.votes[i + 1] ?? 0,
       id: state.movies[i].id,
       title: state.movies[i].title,
       author: state.movies[i].author,
@@ -22,6 +21,6 @@ export const useAllMovies = (): IRatedMovie[] => {
 
     movies.push(newMap);
   }
-
+  
   return movies;
 };
