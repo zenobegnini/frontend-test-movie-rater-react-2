@@ -21,8 +21,12 @@ export const Vote: React.FC = () => {
 
   // TODO: Allow voting only after selecting a movie
   const voteAndGo = () => {
-    vote();
-    goTo(State.dashboard);
+    if(!(value == "")){
+      console.log("Hai votato")
+      vote();
+      goTo(State.dashboard);
+    }
+
   };
 
   return (
