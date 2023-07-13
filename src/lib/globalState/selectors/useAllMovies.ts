@@ -1,3 +1,4 @@
+import { List } from "@chakra-ui/react";
 import { Movie } from "../../../api/types";
 import { useGlobalState } from "../GlobalStateContext";
 
@@ -8,11 +9,19 @@ interface IRatedMovie extends Movie {
 export const useAllMovies = (): IRatedMovie[] => {
   const { state } = useGlobalState();
 
-  // TODO: associate movies with votes
-  // state contains movies and votes in separate properties,
-  // join them and return an IRatedMovie array
+  const movies: IRatedMovie[] = [];
 
-  const movies = state.movies as IRatedMovie[]; // not valid: replace
+  for (let i = 0; i < state.movies.length; i++) {
+    const newMap: IRatedMovie = {
+      votes: state.votes[i],
+      id: state.movies[i].id,
+      title: state.movies[i].title,
+      author: state.movies[i].author,
+      year: state.movies[i].year
+    };
+
+    movies.push(newMap);
+  }
 
   return movies;
 };
