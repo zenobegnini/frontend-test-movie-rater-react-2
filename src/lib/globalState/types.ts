@@ -4,6 +4,7 @@ import { actions } from "./actions";
 export enum State {
   dashboard,
   vote,
+  error,
   // TODO: Task 7 - add error case
 }
 
@@ -22,5 +23,5 @@ export interface IGlobalState {
   /**
    * { id: numberOfVotes }
    */
-  votes: Map<string, number>;
+  votes: Record<string, number>;
 }

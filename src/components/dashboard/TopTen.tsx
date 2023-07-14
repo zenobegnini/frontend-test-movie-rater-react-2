@@ -11,7 +11,7 @@ export const TopTen: React.FC = () => {
   return (
     <Box>
       <Title>Top ten</Title>
-      <div style={{WebkitMaskImage: "linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 90%)", maskImage: "linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 90%)", paddingLeft:"8px"}}>
+      <div style={{WebkitMaskImage: "linear-gradient(rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%)", maskImage: "linear-gradient(rgba(0, 0, 0, 0.9) 70%, rgba(0, 0, 0, 0) 100%)", paddingLeft:"8px"}}>
       <OrderedList >
         {movies.map((movie) => (
           <ListItem key={movie.id} style={{margin:"0px"}}>

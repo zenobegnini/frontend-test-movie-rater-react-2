@@ -4,7 +4,7 @@ import { Vote } from "./components/vote/Vote";
 import { useGlobalState } from "./lib/globalState/GlobalStateContext";
 import { useLoadMovies } from "./lib/globalState/mutations/useLoadMovies";
 import { State } from "./lib/globalState/types";
-
+import { Error } from "./components/Error";
 export const Routes: React.FC = () => {
   const { state } = useGlobalState();
 
@@ -18,6 +18,8 @@ export const Routes: React.FC = () => {
     case State.dashboard:
     default:
       return <Dashboard />;
+    case State.error:
+      return <Error/>
     
   }
 };

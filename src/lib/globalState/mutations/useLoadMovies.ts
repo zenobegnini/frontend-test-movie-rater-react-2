@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { MovieList } from "../../../api/types";
 import { useGlobalState } from "../GlobalStateContext";
 import { actions } from "../actions";
+import { useGoTo } from "./useGoTo";
+import { State } from "../types";
 
 /**
  * Call GET /movies and dispatch response
@@ -16,6 +18,9 @@ export const useLoadMovies = () => {
         dispatch(actions.loadMovies(res.data)),
       )
       // TODO: Task 7 - handle errors, implement error action and dispatch it
-      .catch(console.error);
+      .catch((error) => {
+        dispatch(actions.goTo(State.error));
+
+      }); 
   }, [dispatch]);
 };
