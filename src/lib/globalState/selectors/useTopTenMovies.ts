@@ -5,6 +5,17 @@ import { useAllMovies } from "./useAllMovies";
 export const useTopTenMovies = () => {
   console.log("FILM NON ORDINATI");
 
+  /**
+   * ! NOTE TASK 3
+   * Non mi è chiaro il motivo per cui si è scelto di utilizzare let al posto di const per dichiarare movies
+   * in quanto non dovrebbe essere modificata, al massimo poteva essere assegniata ad una nuova costante.
+   * si poteva semplificare ritornando direttamente il risultato senza instanzionare la costante topTenMoviese
+   * ed accondando il metodo sort con il metodo slice per ottenere i primi 10 film
+   *
+   * return movies.sort((a, b) => (a.votes > b.votes ? -1 : 1)).slice(0, 10);
+   *
+   */
+
   let movies = useAllMovies();
 
   // Reorder movies by vote in descending order
